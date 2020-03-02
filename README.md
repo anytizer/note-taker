@@ -22,3 +22,7 @@ Since the notes are personal or single user version, you are responsible to stor
 
 __What information is lost?__
 Links, colors, dates of note, title of note, search capability, sort capability.
+
+# Screenshot
+
+![screenshot](images/screenshot.png)
