@@ -14,17 +14,15 @@
 $files = glob("notes/notes-*.txt");
 $files = array_reverse($files);
 
+$F = count($files)+1;
 foreach($files as $f => $file)
 {
-    $F = $f + 1;
+    --$F;
 
     $name = basename($file);
     $title = file($file)[0];
 
     echo "<div class='w3-container w3-teal w3-padding w3-border w3-border-bottom'>{$F}. <a href='read.php?file={$name}'>{$title}<a></div>";
-
-    #echo "<div class='content'>{$title}</div>";
-    #echo "<br/>";
 }
 ?>
     </div>
