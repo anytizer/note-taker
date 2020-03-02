@@ -15,7 +15,7 @@ if(!is_file($file))
     <link rel="stylesheet" href="css/book.css" />
 </head>
 <body>
-<div class="wrapper wrapper-note">
+<div class="wrapper wrapper-note w3-padding">
     <?php echo nl2br(file_get_contents($file)); ?>
 </div>
 </body>
