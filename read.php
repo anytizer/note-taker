@@ -1,5 +1,6 @@
 <?php
-$file = "notes/".preg_replace("/[^a-z0-9\-\.]/is", "", $_GET["file"]);
+$name = preg_replace("/[^a-z0-9\-\.]/is", "", $_GET["file"]);
+$file = "notes/{$name}";
 if(!is_file($file))
 {
     die("Invalid note file");
@@ -16,7 +17,14 @@ if(!is_file($file))
 </head>
 <body>
 <div class="wrapper wrapper-note w3-padding">
-    <?php echo nl2br(file_get_contents($file)); ?>
+    <div>
+        <?php echo nl2br(file_get_contents($file)); ?>
+    </div>
+    <div>
+        <p>
+            <a href="edit.php?file=<?php echo $name; ?>" class="w3-teal w3-btn">Edit Note</a>
+        </p>
+    </div>
 </div>
 </body>
 </html>
