@@ -19,13 +19,13 @@
                 <textarea name="notes" class="w3-input w3-border w3-border-red" style="height: 200px;" required="required"></textarea>
             </label>
             <label>
+                <br/>
                 <input type="submit" class="w3-input w3-btn w3-red" value="Save Note" />
             </label>
         </div>
         <br/>
     </form>
     <p><a href="notes.php">View notes</a></p>
-<!--    <img src="images/qr.png" height="270" width="272"/>-->
 </div>
 </body>
 </html>
