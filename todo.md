@@ -1,0 +1,1 @@
+A subfolder as a category of note.
