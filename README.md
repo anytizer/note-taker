@@ -2,7 +2,9 @@
 Quick note taker (personal/single user version)
 
 # Installation
-chmod -R 777 notes/
+
+    chmod -R 777 notes/
+    chmod -R 777 notes.deleted/
 
 # Story
 A lot of notes got created on a phone device using ColorNote. One day, it is a time to review them and be able to edit through computer.
@@ -31,7 +33,7 @@ __How can I safeguard my notes?__
 Install this note taker in a safe location, like your personal NAS or home network.
 Again, be aware that the notes are saved in plain text files.
 
-Cloud and web servers are not expected destinations to use note taker.
+Cloud and web servers are not the expected destinations to use this note taker.
 
 __What information is lost?__
 Links, colors, dates of note, title of note
@@ -41,4 +43,4 @@ Search, sort, share, archive.
 
 # Screenshot
 
-![screenshot](images/screenshot.png)
+![screenshot](public_html/images/screenshot.png)
