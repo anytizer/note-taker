@@ -22,7 +22,7 @@
         </div>
         <br/>
     </form>
-    <p><a href="notes.php" class="w3-btn w3-teal">View notes</a></p>
+    <p><a href="notes.php" class="w3-btn w3-teal">View Notes</a></p>
 </div>
 </body>
 </html>
