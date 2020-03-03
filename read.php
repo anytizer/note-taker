@@ -23,6 +23,7 @@ if(!is_file($file))
     <div>
         <p>
             <a href="edit.php?file=<?php echo $name; ?>" class="w3-teal w3-btn">Edit Note</a>
+            <a href="notes.php" class="w3-teal w3-btn">Cancel</a>
         </p>
     </div>
 </div>
