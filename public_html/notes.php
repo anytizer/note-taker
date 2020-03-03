@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
     <title>Note Taker</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="css/book.css" />
+    <?php require_once "../inc/inc.meta.php"; ?>
 </head>
 <body>
 <div class="wrapper wrapper-index">
+    <p><a href="index.php" class="w3-btn w3-teal">Back</a></p>
     <div class="notes">
 <?php
 $files = glob("../notes/notes-*.txt");
@@ -26,6 +24,7 @@ foreach($files as $f => $file)
 }
 ?>
     </div>
+    <p><a href="index.php" class="w3-btn w3-teal">Back</a></p>
 </div>
 </body>
 </html>

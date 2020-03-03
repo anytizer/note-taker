@@ -10,10 +10,7 @@ if(!is_file($file))
 <html lang="en">
 <head>
     <title>Note Taker</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="css/book.css" />
+    <?php require_once "../inc/inc.meta.php"; ?>
 </head>
 <body>
 <div class="wrapper wrapper-note w3-padding">
@@ -22,7 +19,7 @@ if(!is_file($file))
     </div>
     <div>
         <p>
-            <a href="edit.php?file=<?php echo $name; ?>" class="w3-teal w3-btn">Edit Note</a>
+            <a href="edit.php?file=<?php echo $name; ?>" class="w3-teal w3-btn">Edit this Note</a>
             <a href="notes.php" class="w3-teal w3-btn">Cancel</a>
         </p>
     </div>

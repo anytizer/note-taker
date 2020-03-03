@@ -20,15 +20,13 @@ $title = file($file)[0];
 <html lang="en">
 <head>
     <title>Note Taker - Edit Note</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="css/book.css" />
+    <?php require_once "../inc/inc.meta.php"; ?>
 </head>
 <body>
 <div class="wrapper wrapper-note w3-padding">
     <form name="editor" method="post" action="edit.php?file=<?php echo $name; ?>">
         <div class="w3-container w3-padding w3-teal">
+            <a class="w3-btn w3-yellow" href="delete.php?file=<?php echo $name; ?>">X</a>
             <span><?php echo $title; ?></span>
         </div>
         <label>
