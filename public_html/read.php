@@ -14,6 +14,9 @@ if(!is_file($file))
 </head>
 <body>
 <div class="wrapper wrapper-note w3-padding">
+    <div class="w3-container w3-padding w3-teal">
+        <?php echo file($file)[0]; ?>
+    </div>
     <div>
         <?php echo nl2br(file_get_contents($file)); ?>
     </div>
