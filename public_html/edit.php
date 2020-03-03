@@ -36,7 +36,7 @@ $title = file($file)[0];
         </label>
         <p>
             <input type="hidden" name="file" value="<?php echo $file; ?>" />
-            <input type="submit" class="w3-teal w3-btn" value="Edit Note - Save Changes" />
+            <input type="submit" class="w3-red w3-btn" value="Save Changes" />
             <a href="notes.php" class="w3-teal w3-btn">Cancel</a>
         </p>
     </form>
