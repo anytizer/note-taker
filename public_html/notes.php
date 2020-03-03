@@ -11,7 +11,7 @@
 <div class="wrapper wrapper-index">
     <div class="notes">
 <?php
-$files = glob("notes/notes-*.txt");
+$files = glob("../notes/notes-*.txt");
 $files = array_reverse($files);
 
 $F = count($files)+1;
