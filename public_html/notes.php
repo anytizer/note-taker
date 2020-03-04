@@ -25,6 +25,14 @@ foreach($files as $f => $file)
 ?>
     </div>
     <p><a href="index.php" class="w3-btn w3-teal">Back</a></p>
+    <form name="search" method="post" action="search.php" autocomplete="off">
+        <label>
+            <input class="w3-input" type="text" name="query" value=""/>
+        </label>
+        <label>
+            <input class="w3-btn w3-teal w3-input" type="submit" value="Search"/>
+        </label>
+    </form>
 </div>
 </body>
 </html>
