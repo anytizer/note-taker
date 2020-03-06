@@ -27,3 +27,5 @@ body { background-color: antiquewhite; }
 }
 
 a { text-decoration: none; }
+a.active { font-weight: bold; color: #FF0000; }
+a span.counter { color: #CCC; }

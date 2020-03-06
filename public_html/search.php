@@ -1,13 +1,22 @@
 <?php
+require_once "../inc/inc.config.php";
+
 $files = [];
 
-$searches = glob("../notes/notes-*.txt");
-foreach($searches as $s => $search)
+foreach($categories as $category)
 {
-    $fc = file_get_contents($search);
-    if(preg_match("/".preg_quote($_POST["query"])."/is", $fc))
+    $searches = glob("../notes/{$category}/notes-*.txt");
+    foreach($searches as $s => $search)
     {
-        $files[] = $search;
+        $fc = file_get_contents($search);
+        if(preg_match("/".preg_quote($_POST["query"])."/is", $fc))
+        {
+            // the only files that matched
+            $files[] = [
+                "category" => $category,
+                "search" => $search,
+            ];
+        }
     }
 }
 ?>
@@ -23,14 +32,15 @@ foreach($searches as $s => $search)
     <div class="notes">
         <?php
         $F = count($files)+1;
-        foreach($files as $f => $file)
+        foreach($files as $f => $fileinfo)
         {
             --$F;
 
-            $name = basename($file);
-            $title = file($file)[0];
+            $name = basename($fileinfo["search"]);
+            $title = file($fileinfo["search"])[0];
+            $category = $fileinfo["category"];
 
-            echo "<div class='w3-container w3-teal w3-padding w3-border w3-border-bottom'>{$F}. <a href='read.php?file={$name}'>{$title}<a></div>";
+            echo "<div class='w3-container w3-teal w3-padding w3-border w3-border-bottom'>{$F}. <a href='read.php?category={$category}&amp;name={$name}'>{$title}<a> - {$category}</div>";
         }
         ?>
     </div>

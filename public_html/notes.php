@@ -1,3 +1,4 @@
+<?php require_once "../inc/inc.config.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +8,20 @@
 <body>
 <div class="wrapper wrapper-index">
     <p><a href="index.php" class="w3-btn w3-teal">Back</a></p>
+    <div class="w3-padding w3-blue">
+        <h3>Choose a Category</h3>
+        <div class="w3-small">
+        <?php echo "", implode(", ", array_map("_explore", $categories)); ?>
+        </div>
+    </div>
     <div class="notes">
 <?php
-$files = glob("../notes/notes-*.txt");
+
+$category = input($_GET["category"]??".");
+
+$files = glob("../notes/{$category}/notes-*.txt");
 $files = array_reverse($files);
+#shuffle($files);
 
 $F = count($files)+1;
 foreach($files as $f => $file)
@@ -20,19 +31,10 @@ foreach($files as $f => $file)
     $name = basename($file);
     $title = file($file)[0];
 
-    echo "<div class='w3-container w3-teal w3-padding w3-border w3-border-bottom'>{$F}. <a href='read.php?file={$name}'>{$title}<a></div>";
+    echo "<div class='w3-container w3-teal w3-padding w3-border w3-border-bottom'>{$F}. <a href='read.php?category={$category}&amp;name={$name}'>{$title}<a></div>";
 }
 ?>
     </div>
-    <p><a href="index.php" class="w3-btn w3-teal">Back</a></p>
-    <form name="search" method="post" action="search.php" autocomplete="off">
-        <label>
-            <input class="w3-input" type="text" name="query" value=""/>
-        </label>
-        <label>
-            <input class="w3-btn w3-teal w3-input" type="submit" value="Search"/>
-        </label>
-    </form>
 </div>
 </body>
 </html>

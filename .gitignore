@@ -2,3 +2,6 @@
 /notes/notes-*.txt
 /public_html/images
 /notes.deleted/notes-*.txt
+/*.7z
+/*.zip
+/notes/**/notes-*.txt
