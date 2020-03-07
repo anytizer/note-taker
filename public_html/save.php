@@ -1,9 +1,7 @@
 <?php
-$datestamp = date("Ymd-His");
-$name = "notes-{$datestamp}.txt";
-$file = "../notes/{$name}";
+require_once "../inc/inc.config.php";
 
-// @todo Save binary/bom data
-$fc = file_put_contents($file, $_POST["notes"], FILE_APPEND|FILE_BINARY);
+$nm = new note_manager();
+$nm->create($_POST["notes"]);
 
-header("Location: read.php?file={$name}");
+header("Location: notes.php");

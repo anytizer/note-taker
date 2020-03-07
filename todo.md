@@ -7,3 +7,5 @@
 * Delete => Move to deleted category instead.
 * Show number of articles in each categories.
 * Move across articles.
+* Include search in home/unclassifieds.
+* Default category: Undefined

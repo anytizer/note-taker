@@ -1,15 +1,12 @@
 <?php
 require_once "../inc/inc.config.php";
 
-$category = input($_GET["category"]??".");
+$category = $_GET["category"]??"undefined";
+$name = $_GET["name"]??"";
 
-$name = preg_replace("/[^a-z0-9\-\.]/is", "", $_GET["name"]);
-$file = "../notes/{$category}/{$name}";
-if(!is_file($file))
-{
-    die("Invalid note file");
-}
-
+$nm = new note_manager();
+$note = $nm->read($category, $name);
+$categories = $nm->categories();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,16 +17,16 @@ if(!is_file($file))
 <body>
 <div class="wrapper wrapper-note">
     <div class="w3-container w3-padding w3-teal">
-        <?php echo file($file)[0]; ?>
+        <?php echo $note->title; ?>
     </div>
-    <div class="w3-container w3-pale-yellow">
+    <div class="w3-pale-yellow">
         <h3 class="w3-yellow w3-padding">Move to a Category</h3>
         <div class="w3-small w3-padding">
-            <?php echo implode(", ", array_map("_move", $categories)); ?>
+            <?php echo implode(", ", array_map(array($nm, "_move_note_category"), $categories)); ?>
         </div>
     </div>
     <div class="w3-padding">
-        <?php echo nl2br(file_get_contents($file)); ?>
+        <?php echo nl2br($note->text); ?>
     </div>
     <div>
         <p>

@@ -4,7 +4,6 @@ Quick note taker (personal/single user version)
 # Installation
 
     chmod -R 777 notes/
-    chmod -R 777 notes.deleted/
 
 # Story
 A lot of notes got created on a phone device using ColorNote. One day, it is a time to review them and be able to edit through computer.

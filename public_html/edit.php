@@ -16,6 +16,7 @@ if(isset($_POST["notes"]))
     $fc = file_put_contents($file, $_POST["notes"], FILE_BINARY);
 
     header("Location: notes.php");
+    die();
 }
 
 $title = file($file)[0];

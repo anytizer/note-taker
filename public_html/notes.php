@@ -1,4 +1,11 @@
-<?php require_once "../inc/inc.config.php"; ?>
+<?php
+require_once "../inc/inc.config.php";
+
+$category = $_GET["category"]??"undefined";
+
+$nm = new note_manager();
+$files = $nm->notes($category);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,20 +15,8 @@
 <body>
 <div class="wrapper wrapper-index">
     <p><a href="index.php" class="w3-btn w3-teal">Back</a></p>
-    <div class="w3-padding w3-blue">
-        <h3>Choose a Category</h3>
-        <div class="w3-small">
-        <?php echo "", implode(", ", array_map("_explore", $categories)); ?>
-        </div>
-    </div>
     <div class="notes">
 <?php
-
-$category = input($_GET["category"]??".");
-
-$files = glob("../notes/{$category}/notes-*.txt");
-$files = array_reverse($files);
-#shuffle($files);
 
 $F = count($files)+1;
 foreach($files as $f => $file)

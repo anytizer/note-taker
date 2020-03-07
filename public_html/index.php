@@ -1,3 +1,9 @@
+<?php
+require_once "../inc/inc.config.php";
+
+$nm = new note_manager();
+$categories = $nm->categories();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +37,9 @@
             <input class="w3-btn w3-teal w3-input" type="submit" value="Search"/>
         </label>
     </form>
+    <div class="categories">
+        <?php echo implode(", ", array_map(array($nm, "_explore_category"), $categories)); ?>
+    </div>
 </div>
 </body>
 </html>
