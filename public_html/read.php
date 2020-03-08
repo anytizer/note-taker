@@ -16,14 +16,14 @@ $categories = $nm->categories();
 </head>
 <body>
 <div class="wrapper wrapper-note">
-    <div class="w3-container w3-padding w3-teal">
-        <?php echo $note->title; ?>
-    </div>
     <div class="w3-pale-yellow">
-        <h3 class="w3-yellow w3-padding">Move to a Category</h3>
+        <h3 class="w3-yellow w3-padding">Move to a different Category</h3>
         <div class="w3-small w3-padding">
             <?php echo implode(", ", array_map(array($nm, "_move_note_category"), $categories)); ?>
         </div>
+    </div>
+    <div class="w3-container w3-padding w3-teal">
+        <?php echo $note->title; ?>
     </div>
     <div class="w3-padding">
         <?php echo nl2br($note->text); ?>

@@ -14,7 +14,10 @@ $files = $nm->notes($category);
 </head>
 <body>
 <div class="wrapper wrapper-index">
-    <p><a href="index.php" class="w3-btn w3-teal">Back</a></p>
+    <p>
+        <a href="index.php" class="w3-btn w3-teal">Back</a>
+        <span class="w3-large"><?php echo $category; ?></span>
+    </p>
     <div class="notes">
 <?php
 
@@ -26,7 +29,9 @@ foreach($files as $f => $file)
     $name = basename($file);
     $title = file($file)[0];
 
-    echo "<div class='w3-container w3-teal w3-padding w3-border w3-border-bottom'>{$F}. <a href='read.php?category={$category}&amp;name={$name}'>{$title}<a></div>";
+    echo "<div class='w3-container w3-teal w3-padding w3-border w3-border-bottom'>{$F}. <a href='read.php?category={$category}&amp;name={$name}'>
+            == <span>{$title}</span>
+        <a></div>";
 }
 ?>
     </div>

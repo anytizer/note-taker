@@ -1,4 +1,12 @@
 <?php
+require_once "../inc/inc.config.php";
+
+die("Do not delete like this... move the category");
+
+#$nm = new note_manager();
+#$nm->delete($_GET["category"], $_GET["file"]);
+
+
 $name = preg_replace("/[^a-z0-9\-\.]/is", "", $_GET["file"]);
 $file = "../notes/{$name}";
 if(!is_file($file))

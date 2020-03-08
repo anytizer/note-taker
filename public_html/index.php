@@ -28,17 +28,23 @@ $categories = $nm->categories();
         </div>
         <br/>
     </form>
-    <p><a href="notes.php" class="w3-btn w3-teal">View Notes</a></p>
+<!--    <p>-->
+<!--        <a href="notes.php" class="w3-btn w3-teal">View Notes</a>-->
+<!--        <a href="categories.php" class="w3-btn w3-teal">View Categories</a>-->
+<!--    </p>-->
     <form name="search" method="post" action="search.php" autocomplete="off">
         <label>
-            <input class="w3-input" type="text" name="query" value=""/>
+            <input class="w3-input w3-border w3-border-red" type="text" name="query" value=""/>
         </label>
         <label>
             <input class="w3-btn w3-teal w3-input" type="submit" value="Search"/>
         </label>
     </form>
+
     <div class="categories">
-        <?php echo implode(", ", array_map(array($nm, "_explore_category"), $categories)); ?>
+        <ul>
+            <?php echo implode("\r\n\t\t\t", array_map(array($nm, "_explore_category"), $categories)); ?>
+        </ul>
     </div>
 </div>
 </body>

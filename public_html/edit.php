@@ -1,25 +1,20 @@
 <?php
 require_once "../inc/inc.config.php";
 
-$name = preg_replace("/[^a-z0-9\-\.]/is", "", $_GET["name"]);
+$category = $_GET["category"];
+$name = $_GET["name"];
 
-$category = input($_GET["category"]??".");
-
-$file = "../notes/{$category}/{$name}";
-if(!is_file($file))
-{
-    die("Invalid note file");
-}
+$nm = new note_manager();
+$note = $nm->read($category, $name);
 
 if(isset($_POST["notes"]))
 {
-    $fc = file_put_contents($file, $_POST["notes"], FILE_BINARY);
+    $nm = new note_manager();
+    $nm->edit($category, $name, $_POST["notes"]);
 
     header("Location: notes.php");
     die();
 }
-
-$title = file($file)[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,11 +26,11 @@ $title = file($file)[0];
 <div class="wrapper wrapper-note w3-padding">
     <form name="editor" method="post" action="edit.php?category=<?php echo $category; ?>&amp;name=<?php echo $name; ?>">
         <div class="w3-container w3-padding w3-teal">
-            <a class="w3-btn w3-yellow" href="delete.php?file=<?php echo $name; ?>">X</a>
-            <span><?php echo $title; ?></span>
+            <a class="w3-btn w3-yellow" href="delete.php?category=<?php echo $category; ?>&amp;file=<?php echo $name; ?>">X</a>
+            <span><?php echo $note->title; ?></span>
         </div>
         <label>
-            <textarea name="notes" class="w3-input" style="height: 400px;"><?php echo file_get_contents($file); ?></textarea>
+            <textarea name="notes" class="w3-input" style="height: 400px;"><?php echo $note->text; ?></textarea>
         </label>
         <p>
             <input type="submit" class="w3-red w3-btn" value="Save Changes" />
