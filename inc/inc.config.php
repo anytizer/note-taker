@@ -8,7 +8,7 @@ class NoteDTO
 class CategoryDTO
 {
     public $name;
-    public $folder;
+    public $folder; // Dynamic Field
 
     public function __construct($name)
     {
@@ -29,7 +29,6 @@ class note_manager
             "articles" => new CategoryDTO("Articles"),
             "automation" => new CategoryDTO("Automation"),
             "concepts" => new CategoryDTO("Concepts"),
-            "deleted" => new CategoryDTO("Deleted"),
             "disasters" => new CategoryDTO("Disasters"),
             "dreams" => new CategoryDTO("Dreams"),
             "education" => new CategoryDTO("Education"),
@@ -40,12 +39,18 @@ class note_manager
             "health" => new CategoryDTO("Health"),
             "jobs" => new CategoryDTO("Jobs"),
             "mythology" => new CategoryDTO("Mythology"),
+            "nepal" => new CategoryDTO("Nepal Related"),
             'organization' => new CategoryDTO("Organization"),
+            'politics' => new CategoryDTO("Politics"),
             "research" => new CategoryDTO("Research Materials"),
             "technology" => new CategoryDTO("Technology"),
-            "undefined" => new CategoryDTO("Undefined"),
             "yellowpages" => new CategoryDTO("Yellow Pages"),
             "youtube" => new CategoryDTO("YouTube Links"),
+
+            "my" => new CategoryDTO("My Story (Book)"),
+
+            "deleted" => new CategoryDTO("Deleted"),
+            "undefined" => new CategoryDTO("Undefined"),
         ];
     }
 
@@ -105,6 +110,13 @@ class note_manager
         $fc = file_put_contents($file, strip_tags($note), FILE_BINARY);
     }
 
+    /**
+     * Migrate an article to different category
+     *
+     * @param string $to
+     * @param string $from
+     * @param string $name
+     */
     public function move($to="", $from="", $name="")
     {
         $to = $this->_valid_category($to);
@@ -116,7 +128,11 @@ class note_manager
             die("Invalid note file");
         }
 
-        mkdir("{$this->path}/{$to}");
+        if(!is_dir("{$this->path}/{$to}"))
+        {
+            mkdir("{$this->path}/{$to}");
+        }
+
         rename($file, "{$this->path}/{$to}/{$name}");
     }
 
@@ -185,7 +201,7 @@ class note_manager
         $cat = $this->_category($folder);
 
         $counter = $this->_count_notes($folder);
-        return "<li class='w3-btn w3-pale-yellow' style='width: 300px;'>
+        return "<li>
                     <a href='notes.php?category={$folder}'>{$cat->name} <span class='counter'>({$counter})</span></a>
                 </li>";
     }
