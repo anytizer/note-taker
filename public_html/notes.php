@@ -30,7 +30,7 @@ foreach($files as $f => $file)
     $title = file($file)[0];
 
     echo "<div class='w3-container w3-teal w3-padding w3-border w3-border-bottom'>{$F}. <a href='read.php?category={$category}&amp;name={$name}'>
-            == <span>{$title}</span>
+            <span>{$title}</span>
         <a></div>";
 }
 ?>
