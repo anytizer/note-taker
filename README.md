@@ -6,10 +6,10 @@ Quick note taker (personal/single user version)
     chmod -R 777 notes/
 
 # Story
-A lot of notes got created on a phone device using ColorNote. One day, it is a time to review them and be able to edit through computer.
-So, there was a need for transferring notes from phone device to web/LAN.
+A lot of notes got created on a phone device using ColorNote. One day, it is a time to review them and be able to manage through computer. So, there was a need for transferring notes from phone device to web/LAN.
 
 # Frequently Asked Questions
+
 __What is this product all about?__
 It is a *simple* note taker.
 It helps to transform your notes from phone or tablet to web/computer.
@@ -19,10 +19,9 @@ __Why single user version?__
 __Why does not it allow to edit notes?__
 Notes are expected to be managed on your mobile's note application.
 You can use any popular note taker like [colornote](https://play.google.com/store/apps/details?id=com.socialnmobile.dictapps.notepad.color.note) by [Social & Mobile](https://www.colornote.com/).
-You will edit the notes in the note application itself. Then,
-You will submit the finalized notes to this note taker in order to transfer them to computer.
+You will edit the notes in the note application itself.
 
-However, a basic editor is a work in progress.
+Then, you will submit the finalized notes to this note taker in order to transfer them to computer.
 
 __Is note taker safe?__
 No. Data saved are stored as plain text notes.
