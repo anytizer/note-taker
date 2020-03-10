@@ -12,7 +12,7 @@ if(isset($_POST["notes"]))
     $nm = new note_manager();
     $nm->edit($category, $name, $_POST["notes"]);
 
-    header("Location: notes.php");
+    header("Location: notes.php?category={$category}");
     die();
 }
 ?>
