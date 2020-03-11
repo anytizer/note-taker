@@ -5,6 +5,7 @@
 * notes.php displays links to categories.
 * Download notes as a .zip file.
 * Variable name fix: folder, category.
+* Bring to top- by renaming the file to current datetime stamp.
 
 # Done
 

@@ -44,6 +44,7 @@ class note_manager
             'politics' => new CategoryDTO("Politics"),
             "research" => new CategoryDTO("Research Materials"),
             "technology" => new CategoryDTO("Technology"),
+            "ted" => new CategoryDTO("TED Talks"),
             "yellowpages" => new CategoryDTO("Yellow Pages"),
             "youtube" => new CategoryDTO("YouTube Links"),
 
@@ -177,9 +178,16 @@ class note_manager
     {
         $category = $this->_valid_category($category);
 
-        $files = glob("{$this->path}/{$category}/notes-*.txt");
-        $files = array_reverse($files);
+        $files = glob("{$this->path}/{$category}/notes-*.txt", GLOB_NOSORT);
+        usort($files, array($this, "_fmt"));
+        #$files = array_reverse($files);
         return $files;
+    }
+
+    public function _fmt($a="note1.txt", $b="note2.txt")
+    {
+        return filemtime($b) > filemtime($a);
+        #return filemtime($b) - filemtime($a);
     }
 
     private function _category($folder=""): CategoryDTO
