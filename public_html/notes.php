@@ -3,7 +3,7 @@ require_once "../inc/inc.config.php";
 
 $category = $_GET["category"]??"undefined";
 
-$nm = new note_manager();
+$nm = new NoteManager();
 $files = $nm->notes($category);
 ?>
 <!DOCTYPE html>

@@ -4,7 +4,7 @@ require_once "../inc/inc.config.php";
 $category = $_GET["category"]??"undefined";
 $name = $_GET["name"]??"";
 
-$nm = new note_manager();
+$nm = new NoteManager();
 $note = $nm->read($category, $name);
 $categories = $nm->categories();
 ?>

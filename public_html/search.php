@@ -1,7 +1,7 @@
 <?php
 require_once "../inc/inc.config.php";
 
-$nm = new note_manager();
+$nm = new NoteManager();
 $notes = $nm->search($_POST["query"]);
 ?>
 <!DOCTYPE html>

@@ -1,7 +1,7 @@
 <?php
 require_once "../inc/inc.config.php";
 
-$nm = new note_manager();
+$nm = new NoteManager();
 $categories = $nm->categories();
 ?>
 <!DOCTYPE html>

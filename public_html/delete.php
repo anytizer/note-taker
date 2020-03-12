@@ -3,7 +3,7 @@ require_once "../inc/inc.config.php";
 
 die("Do not delete like this... move the category");
 
-#$nm = new note_manager();
+#$nm = new NoteManager();
 #$nm->delete($_GET["category"], $_GET["file"]);
 
 

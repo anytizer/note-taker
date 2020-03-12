@@ -9,6 +9,6 @@
 
 - [x] Search over note files.
 - [x] Default category: Undefined.
-- [x] Delete => Move to deleted category instead.
+- [x] Delete - `deleted` is a category to move into.
 - [x] Show number of articles in each categories.
 - [x] Bring to top - by renaming the file to current datetime stamp.

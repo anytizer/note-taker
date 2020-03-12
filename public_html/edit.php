@@ -4,12 +4,12 @@ require_once "../inc/inc.config.php";
 $category = $_GET["category"];
 $name = $_GET["name"];
 
-$nm = new note_manager();
+$nm = new NoteManager();
 $note = $nm->read($category, $name);
 
 if(isset($_POST["notes"]))
 {
-    $nm = new note_manager();
+    $nm = new NoteManager();
     $nm->edit($category, $name, $_POST["notes"]);
 
     header("Location: notes.php?category={$category}");

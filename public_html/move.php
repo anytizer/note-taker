@@ -8,7 +8,7 @@ $to = preg_replace("/[^a-z]/is", "", $_GET["to"]);
 $from = preg_replace("/[^a-z]/is", "", $_GET["from"]);
 $name = preg_replace("/[^a-z0-9\-\.]/is", "", $_GET["name"]);
 
-$nm = new note_manager();
+$nm = new NoteManager();
 $nm->move($to, $from, $name);
 
 #header("Location: notes.php?category={$to}");
