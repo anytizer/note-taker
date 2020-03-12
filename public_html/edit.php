@@ -23,10 +23,9 @@ if(isset($_POST["notes"]))
     <?php require_once "../inc/inc.meta.php"; ?>
 </head>
 <body>
-<div class="wrapper wrapper-note w3-padding">
+<div class="wrapper wrapper-note">
     <form name="editor" method="post" action="edit.php?category=<?php echo $category; ?>&amp;name=<?php echo $name; ?>">
         <div class="w3-container w3-padding w3-teal">
-            <a class="w3-btn w3-yellow" href="delete.php?category=<?php echo $category; ?>&amp;file=<?php echo $name; ?>">X</a>
             <span><?php echo $note->title; ?></span>
         </div>
         <label>
