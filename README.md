@@ -1,5 +1,5 @@
 # note-taker
-Quick note taker (personal/single user version)
+Quick note taker - personal/single user version
 
 # Installation
 
@@ -23,7 +23,7 @@ You will edit the notes in the note application itself.
 
 Then, you will submit the finalized notes to this note taker in order to transfer them to computer.
 
-__Is note taker safe?__
+__Is note taker's data safe?__
 No. Data saved are stored as plain text notes.
 Since the notes are personal or single user version, you are responsible to store them safely.
 
@@ -37,7 +37,7 @@ __What information is lost?__
 Links, colors, dates of note, title of note
 
 __What capabilities are lost?__
-Search, sort, share, archive.
+~~Search~~, sort, share, archive.
 
 # Screenshot
 
