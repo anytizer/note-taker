@@ -20,6 +20,13 @@ $categories = $nm->categories();
     <div class="w3-container w3-padding w3-teal">
         <?php echo $note->title; ?>
     </div>
+    <div class="w3-container w3-padding w3-small w3-pale-red">
+1. Introduction
+2. Body Organization
+3. Supporting Chapter
+4. Critical Overview
+5. Ending Notes
+    </div>
     <div class="w3-padding">
         <?php echo nl2br($note->text); ?>
     </div>
@@ -32,8 +39,10 @@ $categories = $nm->categories();
     </div>
 
     <div class="w3-pale-yellow">
-        <h3 class="w3-yellow w3-padding">Assign a different Category</h3>
-        <div class="w3-small w3-padding">
+        <h3 class="w3-yellow w3-padding">Change Category ...
+            <a href="#" class="w3-btn w3-teal w3-right w3-small" onclick="return toggle();">A</a>
+        </h3>
+        <div class="w3-small w3-padding" id="categoriescloud" style="display: none;">
             <?php echo implode(", ", array_map(array($nm, "_move_note_category"), $categories)); ?>
         </div>
     </div>
@@ -45,5 +54,13 @@ $categories = $nm->categories();
         </div>
     </div>
 </div>
+<script>
+function toggle()
+{
+    var cloud = document.getElementById("categoriescloud");
+    cloud.style.display = cloud.style.display == "none" ? "block":"none";
+    return false;
+}
+</script>
 </body>
 </html>

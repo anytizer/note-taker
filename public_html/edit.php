@@ -12,6 +12,7 @@ if(isset($_POST["notes"]))
     $nm = new NoteManager();
     $nm->edit($category, $name, $_POST["notes"]);
 
+    # read.php?category=undefined&name=notes-20200312-134627.txt
     header("Location: notes.php?category={$category}");
     die();
 }

@@ -38,10 +38,12 @@ class NoteManager
             "governance" => new CategoryDTO("Governance"),
             "health" => new CategoryDTO("Health"),
             "jobs" => new CategoryDTO("Jobs"),
+            "language" => new CategoryDTO("Language"),
             "mythology" => new CategoryDTO("Mythology"),
             "nepal" => new CategoryDTO("Nepal Related"),
             'organization' => new CategoryDTO("Organization"),
             'politics' => new CategoryDTO("Politics"),
+            "reference" => new CategoryDTO("References"),
             "research" => new CategoryDTO("Research Materials"),
             "technology" => new CategoryDTO("Technology"),
             "ted" => new CategoryDTO("TED Talks"),
@@ -49,6 +51,8 @@ class NoteManager
             "youtube" => new CategoryDTO("YouTube Links"),
 
             "my" => new CategoryDTO("My Story (Book)"),
+            "selected" => new CategoryDTO("My Selected Articles"),
+            "completed" => new CategoryDTO("My Completed Articles"),
 
             "deleted" => new CategoryDTO("Deleted"),
             "undefined" => new CategoryDTO("Undefined"),
